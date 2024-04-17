@@ -12,9 +12,6 @@ from sklearn.metrics import mean_squared_error, mean_absolute_error,r2_score
 
 import streamlit as st
 
-"""
-# BURAK 
-"""
 col1, col2,col13 = st.columns(3)
 with col1:
     st.write("BINALAR İÇİN ISITMA SOĞUTMA YUKU HESABI", unsafe_allow_html=True)

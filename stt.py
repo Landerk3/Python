@@ -135,12 +135,12 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3,random_s
 
 st.sidebar.header('VALUES')
 def user_input_features():
-    relative_compactness = st.sidebar.slider('relative_compactness',0.764,0.98,0.73)
-    wall_area = st.sidebar.slider('wall_area',240,420,315)
-    roof_area = st.sidebar.slider('roof_area',100,250,159)
-    overall_height = st.sidebar.slider('overall_height',3.5,7.0,3.5)
-    glazing_area = st.sidebar.slider('glazing_area',0.0,0.4,0.2)
-    glazing_area_distribution = st.sidebar.slider('glazing dist',0,5,2)
+    relative_compactness = st.sidebar.slider('Relative Compactness',0.764,0.98,0.73)
+    wall_area = st.sidebar.slider('Wall Area',240,420,315)
+    roof_area = st.sidebar.slider('Roof Area',100,250,159)
+    overall_height = st.sidebar.slider('Overall Height',3.5,7.0,3.5)
+    glazing_area = st.sidebar.slider('Glazing Area',0.0,0.4,0.2)
+    glazing_area_distribution = st.sidebar.slider('Glazing Dist',0,5,2)
 
     data = {'relative_compactness' : relative_compactness,
             'wall_area' : wall_area,

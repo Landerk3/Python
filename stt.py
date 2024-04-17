@@ -178,7 +178,7 @@ col1, col2,col13 = st.columns(3)
 with col1:
     st.write(" ", unsafe_allow_html=True)
 with col2:
-    st.write("<h1 style='font-weight: bold; font-size: 29px;'>     {ModelType}</h1>", unsafe_allow_html=True)
+    st.write(f"<h1 style='font-weight: bold; font-size: 29px;'>     {ModelType}</h1>", unsafe_allow_html=True)
 with col13:
     st.write(" ", unsafe_allow_html=True)
 # Hata dağılım grafiği

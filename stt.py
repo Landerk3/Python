@@ -11,7 +11,7 @@ from sklearn.neighbors import KNeighborsRegressor
 from sklearn.metrics import mean_squared_error, mean_absolute_error,r2_score
 
 import streamlit as st
-import folium
+
 """
 # BURAK 
 """

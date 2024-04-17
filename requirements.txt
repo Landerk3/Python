@@ -6,4 +6,4 @@ pandas-datareader
 prophet
 matplotlib
 seaborn
-sklearn
+scikit-learn

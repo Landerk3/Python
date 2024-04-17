@@ -204,7 +204,7 @@ with col5:
     st.write(" ")
 
 #st.write(y_pred2)
-plt.figure(figsize=(8, 6))
-sns.heatmap(correlation_matrix, annot=True,fmt=".2f", cmap="coolwarm", cbar=True)
-st.pyplot()
+#plt.figure(figsize=(8, 6))
+#sns.heatmap(correlation_matrix, annot=True,fmt=".2f", cmap="coolwarm", cbar=True)
+#st.pyplot()
 

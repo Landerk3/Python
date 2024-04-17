@@ -197,11 +197,11 @@ df2 = user_input_features()
 y_pred2 = model.predict(df2)
 col3, col4,col5 = st.columns(3)
 with col3:
-    st.markdown("   ")
+    st.markdown(f"<h1 style='font-weight: bold; font-size: 24px;'>Gerekli enerji miktarı </h1>", unsafe_allow_html=True)
 with col4:
     st.write(f"<h1 style='font-weight: bold; font-size: 24px;'>{y_pred2}</h1>", unsafe_allow_html=True)
 with col5:
-    st.write(" ")
+    st.write(f"<h1 style='font-weight: bold; font-size: 24px;'>kWh</h1>", unsafe_allow_html=True)
 
 #st.write(y_pred2)
 #plt.figure(figsize=(8, 6))

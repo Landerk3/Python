@@ -26,7 +26,7 @@ st.set_option('deprecation.showPyplotGlobalUse', False)
 pd.set_option('display.max_columns', None)
 pd.set_option('display.width', 500)
 pd.set_option('display.float_format', lambda x: '%.3f' % x)
-df = pd.read_csv("C:/Users/taso/Desktop/STREAMLİT/ENB2012_data.csv")
+df = pd.read_csv("ENB2012_data.csv")
 #print(df.head())
 #sütun isimlerini değiştirdik.
 df.columns = ['relative_compactness', 'surface_area', 'wall_area', 'roof_area', 'overall_height', 'orientation',

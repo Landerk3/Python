@@ -12,13 +12,7 @@ from sklearn.metrics import mean_squared_error, mean_absolute_error,r2_score
 
 import streamlit as st
 st.write("<h1 style='font-weight: bold; font-size: 29px;'>Isıtma Soğutma Yük Tahmini</h1>", unsafe_allow_html=True)
-col1, col2,col13 = st.columns(3)
-with col1:
-    st.write(" ", unsafe_allow_html=True)
-with col2:
-    st.write("<h1 style='font-weight: bold; font-size: 29px;'>     Data Boom Boom</h1>", unsafe_allow_html=True)
-with col13:
-    st.write(" ", unsafe_allow_html=True)
+
 st.set_option('deprecation.showPyplotGlobalUse', False)
 pd.set_option('display.max_columns', None)
 pd.set_option('display.width', 500)
@@ -180,13 +174,19 @@ tahmin = a
 
 # Hata hesaplama
 hata = gercek - tahmin
-
+col1, col2,col13 = st.columns(3)
+with col1:
+    st.write(" ", unsafe_allow_html=True)
+with col2:
+    st.write("<h1 style='font-weight: bold; font-size: 29px;'>     {ModelType}</h1>", unsafe_allow_html=True)
+with col13:
+    st.write(" ", unsafe_allow_html=True)
 # Hata dağılım grafiği
 plt.figure(figsize=(8, 6))
 plt.scatter(gercek, tahmin, color='red', alpha=0.7)
 plt.plot([y.min(), y.max()], [y.min(), y.max()], color='red', linestyle='--')
 #plt.axhline(, color='black', linestyle='--')
-plt.title('modelname')
+plt.title('Hata Dağılım Grafiği')
 plt.xlabel('Gerçek Değerler')
 plt.ylabel('Tahmin Edilen Değerler')
 plt.grid(True)

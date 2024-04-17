@@ -11,10 +11,10 @@ from sklearn.neighbors import KNeighborsRegressor
 from sklearn.metrics import mean_squared_error, mean_absolute_error,r2_score
 
 import streamlit as st
-
+st.write("<h1 style='font-weight: bold; font-size: 29px;'>Isıtma Soğutma Yük Tahmini</h1>", unsafe_allow_html=True)
 col1, col2,col13 = st.columns(3)
 with col1:
-    st.write("BINALAR İÇİN ISITMA SOĞUTMA YUKU HESABI", unsafe_allow_html=True)
+    st.write(" ", unsafe_allow_html=True)
 with col2:
     st.write("<h1 style='font-weight: bold; font-size: 29px;'>     Data Boom Boom</h1>", unsafe_allow_html=True)
 with col13:

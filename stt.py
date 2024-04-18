@@ -56,7 +56,7 @@ def main():
         st.write("Evi ısıtmak için ihtiyacınız olan yükü öğrenmek mi istiyorsunuz?")
         st.write("Isıtma Yük tahmini hesabını yapın!")
         image_path = "image.jpg"
-        st.markdown("<div style='float: right;'><img src='path/to/image.jpg' alt='Isıtma Yükü Tahmini' width='400'></div>",unsafe_allow_html=True)
+        st.markdown("<div style='float: right;'><img src='image.jpg' alt='Isıtma Yükü Tahmini' width='400'></div>",unsafe_allow_html=True)
         #st.image(image_path, caption='Data Boom Boom Logo',use_column_width = True)
     elif choice == "Hakkımızda":
         st.write("Söz Tuana KURŞUN - Bilgisayar Mühendisi")

@@ -12,6 +12,28 @@ from sklearn.linear_model import LinearRegression
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.neighbors import KNeighborsRegressor
 import matplotlib.pyplot as plt
+st.markdown(
+    """
+    <style>
+    .button-container {
+        display: flex;
+        justify-content: center;
+    }
+    .button {
+        margin: 10px;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+# Düğmeyi özel bir div içine yerleştirme
+st.markdown("<div class='button-container'>", unsafe_allow_html=True)
+if st.button('Soldaki Düğme'):
+    st.write('Soldaki düğmeye tıklandı!')
+if st.button('Sağdaki Düğme'):
+    st.write('Sağdaki düğmeye tıklandı!')
+st.markdown("</div>", unsafe_allow_html=True)
 
 def main():
     st.sidebar.header('VALUES')  

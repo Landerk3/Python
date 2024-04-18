@@ -44,7 +44,7 @@ def main():
             model = KNeighborsRegressor()
         model.fit(X_train, y_train)
         y_pred = model.predict(X_test)
-        return y_pred,y_test
+        return y_pred, y_test
 
     st.title("Isıtma Yükü Tahmini")
 

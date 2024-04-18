@@ -43,7 +43,7 @@ def main():
         elif modelname == 'KNeighborsRegressor':
             model = KNeighborsRegressor()
         model.fit(X_train, y_train)
-        y_pred = model.predict(X_test)[0]
+        y_pred = model.predict(X_test)
         return y_pred, y_test,model
 
     st.title("Isıtma Yükü Tahmini")
@@ -84,7 +84,7 @@ def main():
         gercek = y_test
         tahmin = y_pred
         hata = gercek - tahmin
-        y_pred2 = model.predict(df2)
+        y_pred2 = model.predict(df2)[0]
         # Grafik oluşturma
         st.write(f"<h1 style='font-weight: bold; font-size: 29px;'>     {ModelType}</h1>", unsafe_allow_html=True)
         plt.figure(figsize=(8, 6))

@@ -86,7 +86,14 @@ def main():
         hata = gercek - tahmin
         y_pred2 = model.predict(df2)[0]
         # Grafik oluşturma
-        st.write(f"<h1 style='font-weight: bold; font-size: 29px;'>     {ModelType}</h1>", unsafe_allow_html=True)
+        col6, col5,col4 = st.columns(3)
+        with col6:
+            st.write(" ", unsafe_allow_html=True)
+        with col5:
+            st.write(f"<h1 style='font-weight: bold; font-size: 29px;'>     {ModelType}</h1>", unsafe_allow_html=True)
+        with col4:
+            st.write(" ", unsafe_allow_html=True)
+        
         plt.figure(figsize=(8, 6))
         plt.scatter(gercek, tahmin, color='red', alpha=0.7)
         plt.plot([y.min(), y.max()], [y.min(), y.max()], color='red', linestyle='--')

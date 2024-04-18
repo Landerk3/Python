@@ -37,7 +37,7 @@ def main():
     st.title("İzmir Data: Veri Bilimi Yolculuğu")
     
     menu = ["Home", "Hakkımızda", "Analiz", "Maaş Tahmini"]
-    choice = st.sidebar.selectbox("Menü", menu)
+    choice = st.selectbox("Menü", menu)
 
     if choice == "Home":
         st.write("Veri Bilimi Yolculuğunuza Hoşgeldiniz!")

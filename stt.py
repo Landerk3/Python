@@ -52,15 +52,9 @@ def main():
     choice = st.sidebar.selectbox("Menü", menu)
 
     if choice == "Giriş":
-        col45,col35 = st.columns(2)
-        with col45:
-            st.write(f"<h1 style='font-weight: bold; font-size: 27px;'> Seçilen Model:</h1>", unsafe_allow_html=True)
-        with col35:
-            st.write("Yeni bir ev mi yapacaksınız?")
-            
-        st.write("Yeni bir ev mi yapacaksınız?")
-        st.write("Evi ısıtmak için ihtiyacınız olan yükü öğrenmek mi istiyorsunuz?")
-        st.write("Isıtma Yük tahmini hesabını yapın!")
+        st.write("→ Yeni bir ev mi yapacaksınız?")
+        st.write("→ Evi ısıtmak için ihtiyacınız olan yükü öğrenmek mi istiyorsunuz?")
+        st.write("→ Isıtma Yük tahmini hesabını yapın!")
         image_path = "image.jpg"
         #st.markdown("<div style='float: right;'><img src='image.jpg' alt='Isıtma Yükü Tahmini' width='400'></div>",unsafe_allow_html=True)
         st.image(image_path, caption='Data Boom Boom Logo',use_column_width = True)

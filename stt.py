@@ -69,6 +69,11 @@ def main():
                                          ["LinearRegression", "RandomForestRegressor", "KNeighborsRegressor"])
 
         # Veri ve hedef değişkeni tanımlamak için örnek bir veri oluşturuyorum
+        df = pd.read_csv("ENB2012_data.csv")
+        df.columns = ['relative_compactness', 'surface_area', 'wall_area', 'roof_area', 'overall_height', 'orientation',
+                'glazing_area', 'glazing_area_distribution', 'heating_load', 'cooling_load']
+        df.drop(['surface_area'], axis=1, inplace=True)
+        df.drop('orientation', axis=1, inplace=True)  
         X = df.drop(['heating_load', 'cooling_load'], axis=1)
         y = df['heating_load']
 

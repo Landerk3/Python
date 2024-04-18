@@ -52,9 +52,9 @@ def main():
     choice = st.sidebar.selectbox("Menü", menu)
 
     if choice == "Giriş":
-        st.write("Yeni bir mi yapacaksınız?")
-        st.write("Evi ısıtmak için ihtiyacınız olan yükü mü öğrenmek istiyorsunuz?")
-        st.write("O zaman Data Boom Sunar.")
+        st.write("Yeni bir ev mi yapacaksınız?")
+        st.write("Evi ısıtmak için ihtiyacınız olan yükü öğrenmek mi istiyorsunuz?")
+        st.write("Isıtma Yük tahmini hesabını yapın!")
     elif choice == "Hakkımızda":
         st.write("Söz Tuana KURŞUN - Bilgisayar Mühendisi")
         st.write("Semih Furkan ÖCEK - İnşaat Mühendisi")

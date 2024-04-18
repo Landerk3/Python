@@ -56,8 +56,8 @@ def main():
         st.write("Evi ısıtmak için ihtiyacınız olan yükü öğrenmek mi istiyorsunuz?")
         st.write("Isıtma Yük tahmini hesabını yapın!")
         image_path = "image.jpg"
-        st.image(image_path, caption='İzmir Data Logo', width=300, height=200) 
-        st.image(image_path, caption='Data Boom Boom Logo', use_column_width=True)
+        
+        st.image(image_path, caption='Data Boom Boom Logo',width=300, height=200, use_column_width=True)
     elif choice == "Hakkımızda":
         st.write("Söz Tuana KURŞUN - Bilgisayar Mühendisi")
         st.write("Semih Furkan ÖCEK - İnşaat Mühendisi")

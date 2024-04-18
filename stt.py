@@ -30,27 +30,69 @@ plt.figure(figsize=(12, 8))
 #sns.heatmap(correlation_matrix, annot=True, fmt="d", cmap="coolwarm", cbar=True)
 plt.title('Correlation Matrix of Features')
 plt.show()
-
+def fonk():
+         # Test verileri üzerinde tahmin yapma
+        #a = model_regression_chart(ModelType)
+        # Gerçek ve tahmini değerler
+        gercek = y_test
+        tahmin = a
+        
+        # Hata hesaplama
+        hata = gercek - tahmin
+        col1, col2,col13 = st.columns(3)
+        with col1:
+            st.write(" ", unsafe_allow_html=True)
+        with col2:
+            st.write(f"<h1 style='font-weight: bold; font-size: 29px;'>     {ModelType}</h1>", unsafe_allow_html=True)
+        with col13:
+            st.write(" ", unsafe_allow_html=True)
+        # Hata dağılım grafiği
+        plt.figure(figsize=(8, 6))
+        plt.scatter(gercek, tahmin, color='red', alpha=0.7)
+        plt.plot([y.min(), y.max()], [y.min(), y.max()], color='red', linestyle='--')
+        #plt.axhline(, color='black', linestyle='--')
+        plt.title('Hata Dağılım Grafiği')
+        plt.xlabel('Gerçek Değerler')
+        plt.ylabel('Tahmin Edilen Değerler')
+        plt.grid(True)
+        st.pyplot()
+        
+        df2 = user_input_features()
+        #st.write(df2)
+        y_pred2 = model.predict(df2)
+        col3, col4,col5 = st.columns(3)
+        with col3:
+            st.markdown(f"<h1 style='font-weight: bold; font-size: 24px;'>Gerekli enerji miktarı </h1>", unsafe_allow_html=True)
+        with col4:
+            st.write(f"<h1 style='font-weight: bold; font-size: 24px;'>{y_pred2}</h1>", unsafe_allow_html=True)
+        with col5:
+            st.write(f"<h1 style='font-weight: bold; font-size: 24px;'>kWh</h1>", unsafe_allow_html=True)
+        
+        #st.write(y_pred2)
+        #plt.figure(figsize=(8, 6))
+        #sns.heatmap(correlation_matrix, annot=True,fmt=".2f", cmap="coolwarm", cbar=True)
+        #st.pyplot()
+  
 import streamlit as st
 st.sidebar.header('VALUES')  
-def user_input_features():
-    relative_compactness = st.sidebar.slider('Relative Compactness',0.764,0.98,0.73)
-    wall_area = st.sidebar.slider('Wall Area',240,420,315)
-    roof_area = st.sidebar.slider('Roof Area',100,250,159)
-    overall_height = st.sidebar.slider('Overall Height',3.5,7.0,3.5)
-    glazing_area = st.sidebar.slider('Glazing Area',0.0,0.4,0.2)
-    glazing_area_distribution = st.sidebar.slider('Glazing Dist',0,5,2)
+# def user_input_features():
+#     relative_compactness = st.sidebar.slider('Relative Compactness',0.764,0.98,0.73)
+#     wall_area = st.sidebar.slider('Wall Area',240,420,315)
+#     roof_area = st.sidebar.slider('Roof Area',100,250,159)
+#     overall_height = st.sidebar.slider('Overall Height',3.5,7.0,3.5)
+#     glazing_area = st.sidebar.slider('Glazing Area',0.0,0.4,0.2)
+#     glazing_area_distribution = st.sidebar.slider('Glazing Dist',0,5,2)
 
-    data = {'relative_compactness' : relative_compactness,
-            'wall_area' : wall_area,
-            'roof_area' :roof_area,
-            'overall_height' :overall_height,
-            'glazing_area' :glazing_area,
-            'glazing_area_distribution' :glazing_area_distribution}
+#     data = {'relative_compactness' : relative_compactness,
+#             'wall_area' : wall_area,
+#             'roof_area' :roof_area,
+#             'overall_height' :overall_height,
+#             'glazing_area' :glazing_area,
+#             'glazing_area_distribution' :glazing_area_distribution}
 
-    features = pd.DataFrame(data,index=[0])
-    return features
-ModelType = st.sidebar.selectbox('KURMAK ISTEDIGINIZ MODEL',["LinearRegression","RandomForestRegressor","KNeighborsRegressor"])
+#     features = pd.DataFrame(data,index=[0])
+#     return features
+# ModelType = st.sidebar.selectbox('KURMAK ISTEDIGINIZ MODEL',["LinearRegression","RandomForestRegressor","KNeighborsRegressor"])
 
 def main():
     st.title("İzmir Data: Veri Bilimi Yolculuğu")
@@ -71,6 +113,8 @@ def main():
         st.write("Analiz sayfası içeriği buraya gelecek.")
     elif choice == "Maaş Tahmini":
         st.sidebar.header('VALUES')  
+        a = model_regression_chart(ModelType)
+        fonk()
         # relative_compactness = st.sidebar.slider('Relative Compactness',0.764,0.98,0.73)
         # wall_area = st.sidebar.slider('Wall Area',240,420,315)
         # roof_area = st.sidebar.slider('Roof Area',100,250,159)
@@ -199,45 +243,5 @@ def model_regression_chart(modelname):
 
     return y_pred
 
-# Test verileri üzerinde tahmin yapma
-a = model_regression_chart(ModelType)
-# Gerçek ve tahmini değerler
-gercek = y_test
-tahmin = a
 
-# Hata hesaplama
-hata = gercek - tahmin
-col1, col2,col13 = st.columns(3)
-with col1:
-    st.write(" ", unsafe_allow_html=True)
-with col2:
-    st.write(f"<h1 style='font-weight: bold; font-size: 29px;'>     {ModelType}</h1>", unsafe_allow_html=True)
-with col13:
-    st.write(" ", unsafe_allow_html=True)
-# Hata dağılım grafiği
-plt.figure(figsize=(8, 6))
-plt.scatter(gercek, tahmin, color='red', alpha=0.7)
-plt.plot([y.min(), y.max()], [y.min(), y.max()], color='red', linestyle='--')
-#plt.axhline(, color='black', linestyle='--')
-plt.title('Hata Dağılım Grafiği')
-plt.xlabel('Gerçek Değerler')
-plt.ylabel('Tahmin Edilen Değerler')
-plt.grid(True)
-st.pyplot()
-
-df2 = user_input_features()
-#st.write(df2)
-y_pred2 = model.predict(df2)
-col3, col4,col5 = st.columns(3)
-with col3:
-    st.markdown(f"<h1 style='font-weight: bold; font-size: 24px;'>Gerekli enerji miktarı </h1>", unsafe_allow_html=True)
-with col4:
-    st.write(f"<h1 style='font-weight: bold; font-size: 24px;'>{y_pred2}</h1>", unsafe_allow_html=True)
-with col5:
-    st.write(f"<h1 style='font-weight: bold; font-size: 24px;'>kWh</h1>", unsafe_allow_html=True)
-
-#st.write(y_pred2)
-#plt.figure(figsize=(8, 6))
-#sns.heatmap(correlation_matrix, annot=True,fmt=".2f", cmap="coolwarm", cbar=True)
-#st.pyplot()
 

@@ -78,20 +78,7 @@ def main():
         # overall_height = st.sidebar.slider('Overall Height',3.5,7.0,3.5)
         # glazing_area = st.sidebar.slider('Glazing Area',0.0,0.4,0.2)
         # glazing_area_distribution = st.sidebar.slider('Glazing Dist',0,5,2)
-        def model_regression_chart(modelname):
-            X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=21)
-            global model
-            if modelname == 'LinearRegression':
-                 model = LinearRegression()
-            if modelname == 'RandomForestRegressor':
-                 model = RandomForestRegressor()
-            if modelname == 'KNeighborsRegressor':
-                 model = KNeighborsRegressor()
-            model.fit(X_train, y_train)
-            y_pred = model.predict(X_test)
-   
-           #return y_pred
-           df2 = y_pred
+        df2 = user_input_features()
         
 
 if __name__ == "__main__":

@@ -57,7 +57,7 @@ def main():
         st.write("Isıtma Yük tahmini hesabını yapın!")
         image_path = "image.jpg"
         
-        st.image(image_path, caption='Data Boom Boom Logo',use_column_width = True)
+        st.image(image_path, caption='Data Boom Boom Logo',align='right',use_column_width = True)
     elif choice == "Hakkımızda":
         st.write("Söz Tuana KURŞUN - Bilgisayar Mühendisi")
         st.write("Semih Furkan ÖCEK - İnşaat Mühendisi")

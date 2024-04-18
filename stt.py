@@ -63,7 +63,7 @@ def main():
     elif choice == "Analiz":
         st.write("Analiz sayfası içeriği buraya gelecek.")
     elif choice == "Isıtma Yükü Tahmini":
-        df = user_input_features()
+        df2 = user_input_features()
 
         ModelType = st.sidebar.selectbox('KURMAK ISTEDIGINIZ MODEL',
                                          ["LinearRegression", "RandomForestRegressor", "KNeighborsRegressor"])
@@ -84,7 +84,6 @@ def main():
         gercek = y_test
         tahmin = y_pred
         hata = gercek - tahmin
-        df2 = user_input_features()
         y_pred2 = model.predict(df2)
         # Grafik oluşturma
         st.write(f"<h1 style='font-weight: bold; font-size: 29px;'>     {ModelType}</h1>", unsafe_allow_html=True)

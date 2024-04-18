@@ -48,7 +48,7 @@ def main():
 
     st.title("Isıtma Yükü Tahmini")
 
-    menu = ["Giriş", "Hakkımızda", "Analiz", "Isıtma Yükü Tahmini"]
+    menu = ["Giriş", "Hakkımızda", "Isıtma Yükü Tahmini"]
     choice = st.sidebar.selectbox("Menü", menu)
 
     if choice == "Giriş":
@@ -60,8 +60,6 @@ def main():
         st.write("Semih Furkan ÖCEK - İnşaat Mühendisi")
         st.write("Gizem YÖRÜR - Makine Mühendisi")
         st.write("Burak TAŞOVA - Elektrik Mühendisi")
-    elif choice == "Analiz":
-        st.write("Analiz sayfası içeriği buraya gelecek.")
     elif choice == "Isıtma Yükü Tahmini":
         df2 = user_input_features()
 

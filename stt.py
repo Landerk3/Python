@@ -69,9 +69,8 @@ def main():
                                          ["LinearRegression", "RandomForestRegressor", "KNeighborsRegressor"])
 
         # Veri ve hedef değişkeni tanımlamak için örnek bir veri oluşturuyorum
-        X = df[['relative_compactness', 'wall_area', 'roof_area', 'overall_height', 'glazing_area',
-                'glazing_area_distribution']]
-        y = [1, 2, 3, 4, 5]  # Örnek olarak belirlenen hedef değişken
+        X = df.drop(['heating_load', 'cooling_load'], axis=1)
+        y = df['heating_load']
 
         # Tahmin ve grafik oluşturma işlemleri
         y_pred ,y_test= model_regression_chart(ModelType, X, y)

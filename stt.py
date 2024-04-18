@@ -88,7 +88,7 @@ def main():
         # Grafik oluşturma
         col6, col5,col4 = st.columns(3)
         with col6:
-            st.write("Seçilen Model: ", unsafe_allow_html=True)
+            st.write(f"<h1 style='font-weight: bold; font-size: 27px;'> Seçilen Model</h1>", unsafe_allow_html=True)
         with col5:
             st.write(f"<h1 style='font-weight: bold; font-size: 29px;'>     {ModelType}</h1>", unsafe_allow_html=True)
         with col4:

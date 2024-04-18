@@ -44,7 +44,7 @@ def main():
             model = KNeighborsRegressor()
         model.fit(X_train, y_train)
         y_pred = model.predict(X_test)
-        return y_pred, y_test
+        return y_pred, y_test,model
 
     st.title("Isıtma Yükü Tahmini")
 
@@ -78,7 +78,7 @@ def main():
         y = df['heating_load']
 
         # Tahmin ve grafik oluşturma işlemleri
-        y_pred ,y_test= model_regression_chart(ModelType, X, y)
+        y_pred ,y_test,model= model_regression_chart(ModelType, X, y)
 
         # Hata hesaplama
         gercek = y_test

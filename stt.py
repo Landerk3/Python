@@ -12,28 +12,6 @@ from sklearn.linear_model import LinearRegression
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.neighbors import KNeighborsRegressor
 import matplotlib.pyplot as plt
-st.markdown(
-    """
-    <style>
-    .button-container {
-        display: flex;
-        justify-content: center;
-    }
-    .button {
-        margin: 10px;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-
-# Düğmeyi özel bir div içine yerleştirme
-st.markdown("<div class='button-container'>", unsafe_allow_html=True)
-if st.button('Soldaki Düğme'):
-    st.write('Soldaki düğmeye tıklandı!')
-if st.button('Sağdaki Düğme'):
-    st.write('Sağdaki düğmeye tıklandı!')
-st.markdown("</div>", unsafe_allow_html=True)
 
 def main():
     st.sidebar.header('VALUES')  
@@ -78,8 +56,8 @@ def main():
         st.write("Evi ısıtmak için ihtiyacınız olan yükü öğrenmek mi istiyorsunuz?")
         st.write("Isıtma Yük tahmini hesabını yapın!")
         image_path = "image.jpg"
-        st.markdown("<div style='float: right;'><img src='image.jpg' alt='Isıtma Yükü Tahmini' width='400'></div>",unsafe_allow_html=True)
-        #st.image(image_path, caption='Data Boom Boom Logo',use_column_width = True)
+        #st.markdown("<div style='float: right;'><img src='image.jpg' alt='Isıtma Yükü Tahmini' width='400'></div>",unsafe_allow_html=True)
+        st.image(image_path, caption='Data Boom Boom Logo',use_column_width = True)
     elif choice == "Hakkımızda":
         st.write("Söz Tuana KURŞUN - Bilgisayar Mühendisi")
         st.write("Semih Furkan ÖCEK - İnşaat Mühendisi")

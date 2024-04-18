@@ -31,6 +31,21 @@ plt.figure(figsize=(12, 8))
 plt.title('Correlation Matrix of Features')
 plt.show()
 
+def main():
+    st.title("İzmir Data: Veri Bilimi Yolculuğu")
+    
+    st.sidebar.title("Menü")
+    selected_page = st.sidebar.radio("Sayfa Seçin", ["Hakkımızda", "Analiz", "Maaş Tahmini"])
+
+    if selected_page == "Hakkımızda":
+        st.write("Bu sayfa hakkımızda bilgileri içerir.")
+    elif selected_page == "Analiz":
+        st.write("Bu sayfa veri analizine ilişkin içerikler barındırır.")
+    elif selected_page == "Maaş Tahmini":
+        st.write("Bu sayfa maaş tahmini yapmak için gereken araçları sağlar.")
+
+if __name__ == "__main__":
+    main()
 
 
 

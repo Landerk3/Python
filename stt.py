@@ -37,7 +37,7 @@ def main():
     st.title("İzmir Data: Veri Bilimi Yolculuğu")
     
     menu = ["Giriş", "Hakkımızda", "Analiz", "Isıtma Yükü Tahmini"]
-    choice = st.selectbox("Menü", menu)
+    choice = st.sidebar.selectbox("Menü", menu)
 
     if choice == "Home":
         st.write("Yeni bir mi yapacaksınız?")
@@ -155,7 +155,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3,random_s
 
 
 
-
+st.sidebar.header('VALUES')  
 def user_input_features():
     relative_compactness = st.sidebar.slider('Relative Compactness',0.764,0.98,0.73)
     wall_area = st.sidebar.slider('Wall Area',240,420,315)

@@ -99,12 +99,12 @@ def main():
         # Gerekli enerji miktarını yazdırma
         col1, col2,col13 = st.columns(3)
         with col1:
-        st.write(" ", unsafe_allow_html=True)
+            st.write(" ", unsafe_allow_html=True)
         with col2:
-        st.markdown(f"<h1 style='font-weight: bold; font-size: 24px;'>Gerekli enerji miktarı: {round(y_pred2,4)} kWh</h1>",
+            st.markdown(f"<h1 style='font-weight: bold; font-size: 24px;'>Gerekli enerji miktarı: {round(y_pred2,4)} kWh</h1>",
                     unsafe_allow_html=True)
         with col13:
-        st.write(" ", unsafe_allow_html=True)
+            st.write(" ", unsafe_allow_html=True)
         #st.markdown(f"<h1 style='font-weight: bold; font-size: 24px;'>Gerekli enerji miktarı: {round(y_pred2,4)} kWh</h1>",
                 unsafe_allow_html=True)
 

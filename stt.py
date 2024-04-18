@@ -32,6 +32,25 @@ plt.title('Correlation Matrix of Features')
 plt.show()
 
 import streamlit as st
+st.sidebar.header('VALUES')  
+def user_input_features():
+    relative_compactness = st.sidebar.slider('Relative Compactness',0.764,0.98,0.73)
+    wall_area = st.sidebar.slider('Wall Area',240,420,315)
+    roof_area = st.sidebar.slider('Roof Area',100,250,159)
+    overall_height = st.sidebar.slider('Overall Height',3.5,7.0,3.5)
+    glazing_area = st.sidebar.slider('Glazing Area',0.0,0.4,0.2)
+    glazing_area_distribution = st.sidebar.slider('Glazing Dist',0,5,2)
+
+    data = {'relative_compactness' : relative_compactness,
+            'wall_area' : wall_area,
+            'roof_area' :roof_area,
+            'overall_height' :overall_height,
+            'glazing_area' :glazing_area,
+            'glazing_area_distribution' :glazing_area_distribution}
+
+    features = pd.DataFrame(data,index=[0])
+    return features
+ModelType = st.sidebar.selectbox('KURMAK ISTEDIGINIZ MODEL',["LinearRegression","RandomForestRegressor","KNeighborsRegressor"])
 
 def main():
     st.title("İzmir Data: Veri Bilimi Yolculuğu")
@@ -52,13 +71,13 @@ def main():
         st.write("Analiz sayfası içeriği buraya gelecek.")
     elif choice == "Maaş Tahmini":
         st.sidebar.header('VALUES')  
-        relative_compactness = st.sidebar.slider('Relative Compactness',0.764,0.98,0.73)
-        wall_area = st.sidebar.slider('Wall Area',240,420,315)
-        roof_area = st.sidebar.slider('Roof Area',100,250,159)
-        overall_height = st.sidebar.slider('Overall Height',3.5,7.0,3.5)
-        glazing_area = st.sidebar.slider('Glazing Area',0.0,0.4,0.2)
-        glazing_area_distribution = st.sidebar.slider('Glazing Dist',0,5,2)
-       
+        # relative_compactness = st.sidebar.slider('Relative Compactness',0.764,0.98,0.73)
+        # wall_area = st.sidebar.slider('Wall Area',240,420,315)
+        # roof_area = st.sidebar.slider('Roof Area',100,250,159)
+        # overall_height = st.sidebar.slider('Overall Height',3.5,7.0,3.5)
+        # glazing_area = st.sidebar.slider('Glazing Area',0.0,0.4,0.2)
+        # glazing_area_distribution = st.sidebar.slider('Glazing Dist',0,5,2)
+        df2 = user_input_features()
         
 
 if __name__ == "__main__":
@@ -160,25 +179,6 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3,random_s
 
 
 
-st.sidebar.header('VALUES')  
-def user_input_features():
-    relative_compactness = st.sidebar.slider('Relative Compactness',0.764,0.98,0.73)
-    wall_area = st.sidebar.slider('Wall Area',240,420,315)
-    roof_area = st.sidebar.slider('Roof Area',100,250,159)
-    overall_height = st.sidebar.slider('Overall Height',3.5,7.0,3.5)
-    glazing_area = st.sidebar.slider('Glazing Area',0.0,0.4,0.2)
-    glazing_area_distribution = st.sidebar.slider('Glazing Dist',0,5,2)
-
-    data = {'relative_compactness' : relative_compactness,
-            'wall_area' : wall_area,
-            'roof_area' :roof_area,
-            'overall_height' :overall_height,
-            'glazing_area' :glazing_area,
-            'glazing_area_distribution' :glazing_area_distribution}
-
-    features = pd.DataFrame(data,index=[0])
-    return features
-ModelType = st.sidebar.selectbox('KURMAK ISTEDIGINIZ MODEL',["LinearRegression","RandomForestRegressor","KNeighborsRegressor"])
 
 #LinearRegression
 #RandomForestRegressor

@@ -52,7 +52,12 @@ def main():
         st.write("Analiz sayfası içeriği buraya gelecek.")
     elif choice == "Maaş Tahmini":
         st.sidebar.header('VALUES')  
-        df2 = user_input_features()
+        relative_compactness = st.sidebar.slider('Relative Compactness',0.764,0.98,0.73)
+        wall_area = st.sidebar.slider('Wall Area',240,420,315)
+        roof_area = st.sidebar.slider('Roof Area',100,250,159)
+        overall_height = st.sidebar.slider('Overall Height',3.5,7.0,3.5)
+        glazing_area = st.sidebar.slider('Glazing Area',0.0,0.4,0.2)
+        glazing_area_distribution = st.sidebar.slider('Glazing Dist',0,5,2)
        
         
 

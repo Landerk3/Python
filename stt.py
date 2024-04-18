@@ -177,7 +177,7 @@ def user_input_features():
 
      features = pd.DataFrame(data,index=[0])
      return features
- ModelType = st.sidebar.selectbox('KURMAK ISTEDIGINIZ MODEL',["LinearRegression","RandomForestRegressor","KNeighborsRegressor"])
+ModelType = st.sidebar.selectbox('KURMAK ISTEDIGINIZ MODEL',["LinearRegression","RandomForestRegressor","KNeighborsRegressor"])
 def model_regression_chart(modelname):
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=21)
     global model

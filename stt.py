@@ -14,7 +14,7 @@ from sklearn.neighbors import KNeighborsRegressor
 import matplotlib.pyplot as plt
 
 def main():
-    st.sidebar.header('VALUES')  
+      
 
     def user_input_features():
         relative_compactness = st.sidebar.slider('Relative Compactness', 0.764, 0.98, 0.73)
@@ -64,6 +64,7 @@ def main():
         st.write("Gizem YÖRÜR - Makine Mühendisi")
         st.write("Burak TAŞOVA - Elektrik Mühendisi")
     elif choice == "Isıtma Yükü Tahmini":
+        st.sidebar.header('VALUES')
         df2 = user_input_features()
 
         ModelType = st.sidebar.selectbox('KURMAK ISTEDIGINIZ MODEL',

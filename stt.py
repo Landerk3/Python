@@ -193,7 +193,7 @@ def model_regression_chart(modelname):
     return y_pred
 
 # Test verileri üzerinde tahmin yapma
-#a = model_regression_chart(ModelType)
+a = model_regression_chart(ModelType)
 # Gerçek ve tahmini değerler
 gercek = y_test
 tahmin = a

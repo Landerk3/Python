@@ -225,7 +225,7 @@ plt.ylabel('Tahmin Edilen Değerler')
 plt.grid(True)
 st.pyplot()
 
-#df2 = user_input_features()
+df2 = user_input_features()
 #st.write(df2)
 y_pred2 = model.predict(df2)
 col3, col4,col5 = st.columns(3)

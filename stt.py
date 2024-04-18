@@ -36,7 +36,7 @@ import streamlit as st
 def main():
     st.title("İzmir Data: Veri Bilimi Yolculuğu")
     
-    menu = ["Home", "Hakkımızda", "Analiz", "Maaş Tahmini"]
+    menu = ["Giriş", "Hakkımızda", "Analiz", "Isıtma Yükü Tahmini"]
     choice = st.selectbox("Menü", menu)
 
     if choice == "Home":
@@ -51,7 +51,8 @@ def main():
     elif choice == "Analiz":
         st.write("Analiz sayfası içeriği buraya gelecek.")
     elif choice == "Maaş Tahmini":
-        st.write("Maaş Tahmini sayfası içeriği buraya gelecek.")
+        df2 = user_input_features()
+        
 
 if __name__ == "__main__":
     main()
@@ -217,7 +218,7 @@ plt.ylabel('Tahmin Edilen Değerler')
 plt.grid(True)
 st.pyplot()
 
-df2 = user_input_features()
+#df2 = user_input_features()
 #st.write(df2)
 y_pred2 = model.predict(df2)
 col3, col4,col5 = st.columns(3)

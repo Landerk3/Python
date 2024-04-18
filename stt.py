@@ -52,7 +52,7 @@ def main():
     elif choice == "Analiz":
         st.write("Analiz sayfası içeriği buraya gelecek.")
     elif choice == "Maaş Tahmini":
-     
+        st.write("Analiz sayfası içeriği buraya gelecek.")
         
 
 if __name__ == "__main__":

@@ -53,9 +53,9 @@ def main():
 
     if choice == "Giriş":
         col45,col35 = st.columns(2)
-        with col6:
+        with col45:
             st.write(f"<h1 style='font-weight: bold; font-size: 27px;'> Seçilen Model:</h1>", unsafe_allow_html=True)
-        with col5:
+        with col35:
             st.write("Yeni bir ev mi yapacaksınız?")
             
         st.write("Yeni bir ev mi yapacaksınız?")

@@ -40,12 +40,14 @@ def main():
     choice = st.selectbox("Menü", menu)
 
     if choice == "Home":
-        st.write("Veri Bilimi Yolculuğunuza Hoşgeldiniz!")
-        st.write("Siz de bir veri profesyoneli olmak mı istiyorsunuz?")
-        st.write("Peki ne kadar kazanacağınızı bilmiyor musunuz?")
-        st.write("O zaman doğru yerdesiniz.")
+        st.write("Yeni bir mi yapacaksınız?")
+        st.write("Evi ısıtmak için ihtiyacınız olan yükü mü öğrenmek istiyorsun ?")
+        st.write("O zaman Data Boom Sunar.")
     elif choice == "Hakkımızda":
-        st.write("Hakkımızda sayfası içeriği buraya gelecek.")
+        st.write(" Söz Tuana KURŞUN - Bilgisayar Mühendisi ")
+        st.write(" Semih Furkan ÖCEK - İnşaat Mühendisi ")
+        st.write(" Gizem YÖRÜR - Makine Mühendisi ")
+        st.write(" Burak TAŞOVA - Elektrik Mühendisi ")
     elif choice == "Analiz":
         st.write("Analiz sayfası içeriği buraya gelecek.")
     elif choice == "Maaş Tahmini":

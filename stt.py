@@ -43,7 +43,7 @@ def main():
         elif modelname == 'KNeighborsRegressor':
             model = KNeighborsRegressor()
         model.fit(X_train, y_train)
-        y_pred = model.predict(X_test)
+        y_pred = model.predict(X_test[0])
         return y_pred, y_test,model
 
     st.title("Isıtma Yükü Tahmini")

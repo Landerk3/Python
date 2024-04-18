@@ -30,22 +30,30 @@ plt.figure(figsize=(12, 8))
 #sns.heatmap(correlation_matrix, annot=True, fmt="d", cmap="coolwarm", cbar=True)
 plt.title('Correlation Matrix of Features')
 plt.show()
-st.sidebar.title("Menü")
+
+import streamlit as st
+
 def main():
     st.title("İzmir Data: Veri Bilimi Yolculuğu")
     
-    st.sidebar.title("Menü")
-    selected_page = st.sidebar.radio("Sayfa Seçin", ["Hakkımızda", "Analiz", "Maaş Tahmini"])
+    menu = ["Home", "Hakkımızda", "Analiz", "Maaş Tahmini"]
+    choice = st.sidebar.selectbox("Menü", menu)
 
-    if selected_page == "Hakkımızda":
-        st.write("Bu sayfa hakkımızda bilgileri içerir.")
-    elif selected_page == "Analiz":
-        st.write("Bu sayfa veri analizine ilişkin içerikler barındırır.")
-    elif selected_page == "Maaş Tahmini":
-        st.write("Bu sayfa maaş tahmini yapmak için gereken araçları sağlar.")
+    if choice == "Home":
+        st.write("Veri Bilimi Yolculuğunuza Hoşgeldiniz!")
+        st.write("Siz de bir veri profesyoneli olmak mı istiyorsunuz?")
+        st.write("Peki ne kadar kazanacağınızı bilmiyor musunuz?")
+        st.write("O zaman doğru yerdesiniz.")
+    elif choice == "Hakkımızda":
+        st.write("Hakkımızda sayfası içeriği buraya gelecek.")
+    elif choice == "Analiz":
+        st.write("Analiz sayfası içeriği buraya gelecek.")
+    elif choice == "Maaş Tahmini":
+        st.write("Maaş Tahmini sayfası içeriği buraya gelecek.")
 
 if __name__ == "__main__":
     main()
+
 
 
 

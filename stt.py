@@ -30,7 +30,7 @@ plt.figure(figsize=(12, 8))
 #sns.heatmap(correlation_matrix, annot=True, fmt="d", cmap="coolwarm", cbar=True)
 plt.title('Correlation Matrix of Features')
 plt.show()
-
+st.sidebar.title("Menü")
 def main():
     st.title("İzmir Data: Veri Bilimi Yolculuğu")
     
